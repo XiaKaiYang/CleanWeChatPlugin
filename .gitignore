@@ -1,0 +1,10 @@
+# Compiled binaries & build output
+build/
+*.dylib
+*.o
+*.dSYM/
+
+# macOS & editor noise
+.DS_Store
+.vscode/
+.idea/

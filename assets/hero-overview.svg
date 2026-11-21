@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-label="CleanWeChatPlugin 运行时架构流程">
+  <rect x="2" y="2" width="956" height="296" rx="18" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+
+  <!-- 顶部标题栏 -->
+  <text x="32" y="40" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#0F172A">运行时架构 — 微信 4.2.1 (270596) · Apple Silicon (arm64)</text>
+  <rect x="740" y="20" width="188" height="28" rx="14" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+  <text x="834" y="38" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#065F46">9/9 符号定位 · 零联网</text>
+
+  <!-- 阶段 1 -->
+  <rect x="28" y="68" width="206" height="196" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="44" y="84" width="60" height="22" rx="11" fill="#E0F2FE"/>
+  <text x="74" y="99" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#0369A1">阶段 1</text>
+  <text x="44" y="130" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#0F172A">dyld 镜像监听</text>
+  <text x="44" y="154" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11.5" fill="#334155">_dyld_register_func</text>
+  <text x="44" y="172" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11.5" fill="#334155">_for_add_image()</text>
+  <text x="44" y="202" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#475569">按 __TEXT 段大于 50 MB</text>
+  <text x="44" y="220" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#475569">锁定核心 wechat.dylib，</text>
+  <text x="44" y="238" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#475569">跳过 84 KB 的壳体动态库</text>
+
+  <!-- 箭头 1->2 -->
+  <path d="M238 166 H258" stroke="#94A3B8" stroke-width="2.2" stroke-linecap="round"/>
+  <polygon points="256,161 264,166 256,171" fill="#94A3B8"/>
+
+  <!-- 阶段 2 -->
+  <rect x="264" y="68" width="206" height="196" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="280" y="84" width="60" height="22" rx="11" fill="#E0F2FE"/>
+  <text x="310" y="99" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#0369A1">阶段 2</text>
+  <text x="280" y="130" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#0F172A">特征扫描 + BL 解码</text>
+  <text x="280" y="154" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11.5" fill="#334155">ScanPattern() 唯一命中</text>
+  <text x="280" y="172" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11.5" fill="#334155">DecodeBranchTarget()</text>
+  <text x="280" y="202" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#475569">运行时动态解析显隐函数、</text>
+  <text x="280" y="220" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#475569">游戏开关、刷新与析构目标，</text>
+  <text x="280" y="238" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#475569">不写死版本固定地址偏移</text>
+
+  <!-- 箭头 2->3 -->
+  <path d="M474 166 H494" stroke="#94A3B8" stroke-width="2.2" stroke-linecap="round"/>
+  <polygon points="492,161 500,166 492,171" fill="#94A3B8"/>
+
+  <!-- 阶段 3 -->
+  <rect x="500" y="68" width="206" height="196" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="516" y="84" width="60" height="22" rx="11" fill="#DCFCE7"/>
+  <text x="546" y="99" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#166534">阶段 3</text>
+  <text x="516" y="130" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#0F172A">W^X 安全跳转补丁</text>
+  <text x="516" y="154" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11.5" fill="#334155">InlineHookBatch::Commit</text>
+  <text x="516" y="172" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11.5" fill="#334155">mach_vm_remap / protect</text>
+  <text x="516" y="202" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#475569">先将 ADRP/ADR 重定位写入</text>
+  <text x="516" y="220" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#475569">只读可执行跳板页再改写入口，</text>
+  <text x="516" y="238" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#475569">并替换 19 个更新管理器方法</text>
+
+  <!-- 箭头 3->4 -->
+  <path d="M710 166 H730" stroke="#94A3B8" stroke-width="2.2" stroke-linecap="round"/>
+  <polygon points="728,161 736,166 728,171" fill="#94A3B8"/>
+
+  <!-- 阶段 4 -->
+  <rect x="736" y="68" width="196" height="196" rx="14" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.5"/>
+  <rect x="752" y="84" width="60" height="22" rx="11" fill="#0F766E"/>
+  <text x="782" y="99" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">阶段 4</text>
+  <text x="752" y="130" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#064E3B">纯净微信界面</text>
+  <text x="752" y="156" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#065F46">• 保留朋友圈，隐藏杂项</text>
+  <text x="752" y="180" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#065F46">• 屏蔽自动更新检测弹窗</text>
+  <text x="752" y="204" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#065F46">• 原生 AppKit 菜单控制</text>
+  <text x="752" y="228" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#065F46">• 配置实时保存立即生效</text>
+</svg>

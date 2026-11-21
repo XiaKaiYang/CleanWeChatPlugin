@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 250" width="960" height="250" role="img" aria-label="安全与透明度对比">
+  <rect x="2" y="2" width="956" height="246" rx="18" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+
+  <!-- 左侧对比面板：常见闭源插件 -->
+  <rect x="24" y="24" width="444" height="202" rx="14" fill="#FEF2F2" stroke="#FECACA" stroke-width="1.5"/>
+  <text x="44" y="54" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#991B1B">常见闭源微信插件</text>
+  <text x="44" y="84" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#7F1D1D">✗ 控制流混淆与字符串加密，源码不可审计</text>
+  <text x="44" y="112" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#7F1D1D">✗ 暗中内置未说明的本地 MCP 或 HTTP 服务</text>
+  <text x="44" y="140" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#7F1D1D">✗ 触及钥匙串（SecItem）与 SQLCipher 聊天库</text>
+  <text x="44" y="168" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#7F1D1D">✗ 动辄分发 18+ MB 闭源预编译二进制包</text>
+  <text x="44" y="202" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#B91C1C">加载进微信前难以完整核验安全边界</text>
+
+  <!-- 右侧对比面板：CleanWeChatPlugin -->
+  <rect x="492" y="24" width="444" height="202" rx="14" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
+  <text x="512" y="54" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#065F46">CleanWeChatPlugin（完全开源）</text>
+  <text x="512" y="84" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#064E3B">✓ 纯可读 Objective-C++ 源码（仅 8 个源文件）</text>
+  <text x="512" y="112" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#064E3B">✓ 零网络请求、零 Socket、零 curl、零 MCP 服务</text>
+  <text x="512" y="140" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#064E3B">✓ 零钥匙串（SecItem）与数据库（SQLCipher）导入</text>
+  <text x="512" y="168" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#064E3B">✓ 本地一键编译为约 217 KB 通用动态库（.dylib）</text>
+  <text x="512" y="202" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#047857">几分钟内即可通过 otool -L 与 nm -u 逐项验真</text>
+</svg>

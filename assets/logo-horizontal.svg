@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 76" width="440" height="76" role="img" aria-label="CleanWeChatPlugin 极简微信插件">
+  <rect x="2" y="2" width="436" height="72" rx="16" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5"/>
+  <!-- 翠绿护盾与极简勾选徽标 -->
+  <rect x="16" y="14" width="48" height="48" rx="12" fill="#0F766E"/>
+  <path d="M40 24 L52 29 V38 C52 46 46.5 51.5 40 54 C33.5 51.5 28 46 28 38 V29 Z" fill="none" stroke="#ECFDF5" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M35 38.5 L38.5 42 L45.5 34.5" fill="none" stroke="#6EE7B7" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- 项目字标 -->
+  <text x="78" y="46" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="25" font-weight="700" fill="#0F172A">CleanWeChat<tspan fill="#0F766E">Plugin</tspan></text>
+  <!-- 平台标签 -->
+  <rect x="348" y="25" width="74" height="26" rx="13" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+  <text x="385" y="42" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#065F46">macOS 版</text>
+</svg>
